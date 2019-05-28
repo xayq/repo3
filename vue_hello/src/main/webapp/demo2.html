@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+    <div id="show">
+        <input type="text" value="keydown事件，只能输入数字" v-on:keydown="only_number($event)" v-on:click="clearTxt($event)">
+        <input type="button" value="单击事件" v-on:click="myfun()">
+        <input type="button" value="鼠标移过来看看" v-on:mouseover="myfun2($event,'red')" @mouseout="myfun2($event,'black')">
+    </div>
+    <script>
+        new Vue({
+            el:"#show",
+            data:{
+                msg:"Hello Vue!!!"
+            },
+            methods:{
+                myfun:function(){
+                  alert("Hi~");
+                },
+                myfun2:function(event,color){
+                        event.target.style.color=color;
+                },
+                clearTxt:function(event){
+                    if(event.target.value=="keydown事件，只能输入数字"){
+                        event.target.value="";
+                    }
+                },
+                only_number:function(event){
+                    var kc=event.keyCode;
+                    if(kc<48||kc>57){
+                        event.preventDefault();
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

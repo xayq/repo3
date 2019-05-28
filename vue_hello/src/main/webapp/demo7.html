@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+    <div id="show">
+        <form>
+            用户名：<input type="text" name="username" v-model="user.name"/><br>
+            年龄：<input type="text" name="age" v-model="user.age"/><br>
+            地址：<input type="text" name="address" v-model="user.address"/><br>
+        </form>
+    </div>
+    <script>
+        new Vue({
+            el:"#show",
+            data:{
+                user:{
+                    name:"张三",
+                    age:23,
+                    address: "陕西西安"
+                }
+            }
+        });
+    </script>
+</body>
+</html>

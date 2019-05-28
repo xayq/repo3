@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+    <div id="show">
+        <ul>
+            <li v-for="(city,index) in array">{{index}}----------{{city}}</li>
+        </ul>
+        <ul>
+            <li v-for="(value,key) in product">{{key}}={{value}}</li>
+        </ul>
+        <table border="1" width="500">
+            <tr bgcolor="gray">
+                <td>编号</td>
+                <td>名称</td>
+                <td>价格</td>
+            </tr>
+            <tr v-for="(p) in plist">
+                <td>{{p.pid}}</td>
+                <td>{{p.pname}}</td>
+                <td>{{p.price}}</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        new Vue({
+            el:"#show",
+            data:{
+                array:["西安","北京","上海","广州","深圳"],
+                product:{
+                    pid:10010,
+                    pname:"笔记本电脑",
+                    price:3800
+                },
+                plist:[
+                    {pid:10010,pname:"笔记本电脑", price:3800},
+                    {pid:10020, pname:"海尔洗衣机", price:1800},
+                    {pid:10030, pname:"小米手机", price:3800}
+                ]
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+    <div id="show">
+        <input type="text" @keydown.enter="fun1()" value="Enter键"><br>
+        <input type="text" @keydown.tab="fun2()" value="Tab键"><br>
+        <input type="text" @keydown.delete="fun3()" value="Del键"><br>
+        <input type="text" @keydown.shift="fun4()" value="Shift键"><br>
+        <input type="text" @keydown.up="fun5()" value="Up键"><br>
+    </div>
+</body>
+<script>
+    new Vue({
+        el:"#show",
+        methods:{
+            fun1:function(){
+                alert("回车");
+            },
+            fun2:function(){
+                alert("Tab键");
+            },
+            fun3:function(){
+                alert("Del键");
+            },
+            fun4:function(){
+                alert("Shift键");
+            },
+            fun5:function(){
+                alert("Up键");
+            }
+        }
+    });
+</script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bound="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+    <div id="show">
+        <div v-text="message"></div>
+        <div v-html="message"></div>
+        <font v-bind:color="c1">AAAAAAAAAAA</font>
+        <font :color="c2">BBBBBBBBBBB</font>
+    </div>
+</body>
+<script>
+    new Vue({
+        el:"#show",
+        data:{
+            message:"<h1>Hello Vue</h1>",
+            c1:"red",
+            c2:"blue"
+        }
+    });
+</script>
+</html>
